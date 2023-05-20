@@ -14,6 +14,7 @@ export default function Login() {
         Lorem Ipsum
       </Paragraph>
       <a href="#">Clique aqui</a>
+      <button type="button">Enviar</button>
     </Container>
   );
 }
