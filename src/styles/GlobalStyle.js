@@ -1,12 +1,16 @@
 import { createGlobalStyle, styled } from 'styled-components';
 import {
+  errorColor,
+  // errorColor,
   primaryColor,
   primaryDarkColor,
+  successColor,
   // errorColor,
   // infoColor,
   // successColor,
   // warningColor,
 } from '../config/colors';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
  * {
@@ -45,6 +49,14 @@ export default createGlobalStyle`
  ul {
   list-style: none;
  }
+
+ /* body .Toastify .Toastify__toast-container .Toastify__toast--success {
+  background: ${successColor};
+ }
+
+ body .Toastify .Toastify__toast-container .Toastify__toast--error {
+  background: ${errorColor};
+ } */
 `;
 
 export const Container = styled.section`
