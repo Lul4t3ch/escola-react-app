@@ -7,7 +7,9 @@ import { Nav } from './styled';
 
 export default function Header() {
   // eslint-disable-next-line no-unused-vars
-  const botaoClicado = useSelector((state) => state.botaoClicado);
+  const botaoClicado = useSelector(
+    (state) => state.exampleReducer.botaoClicado
+  );
 
   return (
     <Nav>
