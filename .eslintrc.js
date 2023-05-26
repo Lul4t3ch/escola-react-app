@@ -30,5 +30,6 @@ module.exports = {
     // 'react/react-in-jsx-scope': 0,
     'jsx-a11y/anchor-is-valid': 0,
     'no-console': 0,
+    'jsx-a11y/alt-text': 0,
   },
 };
