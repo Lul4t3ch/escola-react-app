@@ -35,10 +35,15 @@ export default createGlobalStyle`
   background: ${primaryColor};
   border: none;
   color: #fff;
-  padding: 10px 20px;
+  padding: 15px 20px;
   border-radius: 4px;
   font-weight: 700;
+  transition: all 300ms;
+  font-size: 20px;
+ }
 
+ button:hover {
+  filter: brightness(85%);
  }
 
  a {
