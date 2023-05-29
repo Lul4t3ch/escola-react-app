@@ -6,11 +6,13 @@ import { Container } from '../../styles/GlobalStyle';
 import { Form, Title } from './styled';
 import axios from '../../services/axios';
 import history from '../../services/history';
+import Loading from '../../components/Loading';
 
 export default function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -52,6 +54,7 @@ export default function Register() {
   }
   return (
     <Container>
+      <Loading isLoading={isLoading} />
       <Title>Create account</Title>
       <Form onSubmit={handleSubmit}>
         <label htmlFor="name">

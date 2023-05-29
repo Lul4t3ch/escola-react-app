@@ -32,5 +32,6 @@ module.exports = {
     'no-console': 0,
     'jsx-a11y/alt-text': 0,
     'react/jsx-no-bind': 0,
+    'no-unused-vars': 0,
   },
 };
