@@ -15,6 +15,11 @@ export const AlunoContainer = styled.div`
   }
 `;
 
+export const Title = styled.h1`
+  text-align: center;
+  font-size: 30px;
+`;
+
 export const ProfilePicture = styled.div`
   img {
     width: 36px;

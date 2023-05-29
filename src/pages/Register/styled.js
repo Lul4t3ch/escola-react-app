@@ -3,6 +3,7 @@ import * as colors from '../../config/colors';
 
 export const Title = styled.h1`
   text-align: center;
+  font-size: 30px;
 `;
 
 export const Form = styled.form`

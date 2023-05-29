@@ -4,7 +4,7 @@ import { get } from 'lodash';
 import { FaUserCircle, FaEdit, FaWindowClose } from 'react-icons/fa';
 import { Container } from '../../styles/GlobalStyle';
 import axios from '../../services/axios';
-import { AlunoContainer, ProfilePicture } from './styled';
+import { AlunoContainer, ProfilePicture, Title } from './styled';
 
 export default function Alunos() {
   const [alunos, setAlunos] = useState([]);
@@ -18,7 +18,7 @@ export default function Alunos() {
   }, []);
   return (
     <Container>
-      <h1>Alunos Matriculados</h1>
+      <Title>Alunos Matriculados</Title>
       <AlunoContainer>
         {alunos.map((aluno) => (
           <div key={String(aluno.id)}>
