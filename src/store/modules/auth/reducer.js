@@ -27,6 +27,22 @@ export default (state = initialState, action) => {
       const newState = { ...initialState };
       return newState;
     }
+    case types.REGISTER_REQUEST: {
+      const newState = { ...initialState };
+      newState.isLoading = true;
+      return newState;
+    }
+    case types.REGISTER_FAILURE: {
+      const newState = { ...initialState };
+      newState.isLoading = false;
+      return newState;
+    }
+    case types.REGISTER_SUCCESS: {
+      const newState = { ...initialState };
+      newState.name = action.payload.name;
+      newState.isLoading = false;
+      return newState;
+    }
     default: {
       return state;
     }
