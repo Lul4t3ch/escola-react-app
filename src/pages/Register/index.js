@@ -37,6 +37,7 @@ export default function Register() {
 
     if (formErrors) return;
 
+    setIsLoading(true);
     try {
       await axios.post('/users/', {
         nome: name,
@@ -44,14 +45,17 @@ export default function Register() {
         email,
       });
       toast.success('Account Created!');
+      setIsLoading(false);
 
       history.push('/login');
     } catch (error) {
       const errors = get(error, 'response.data.errors', []);
 
       errors.map((err) => toast.error(err));
+      setIsLoading(false);
     }
   }
+
   return (
     <Container>
       <Loading isLoading={isLoading} />
