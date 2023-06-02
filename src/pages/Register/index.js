@@ -33,7 +33,6 @@ export default function Register() {
     if (name.length < 3 || name.length > 255) {
       formErrors = true;
       toast.error('Name length must be at least 3 characters long');
-      console.log(formErrors);
     }
 
     if (!isEmail(email)) {
