@@ -105,7 +105,7 @@ export default function Aluno({ match }) {
         });
         toast.success('Your changes were saved');
       } else {
-        await axios.post(`/alunos/`, {
+        const { data } = await axios.post(`/alunos/`, {
           nome,
           sobrenome,
           email,
@@ -114,6 +114,7 @@ export default function Aluno({ match }) {
           altura,
         });
         toast.success('Created successfully');
+        history.push(`/aluno/${data.id}/edit`);
       }
       setIsLoading(false);
     } catch (err) {
