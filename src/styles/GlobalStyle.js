@@ -21,9 +21,13 @@ export default createGlobalStyle`
  }
 
  body{
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
   background: ${primaryDarkColor};
   color: ${primaryDarkColor};
+
+  td {
+    vertical-align: middle;
+  }
  }
 
  html, body, #root {
@@ -65,7 +69,7 @@ export default createGlobalStyle`
 `;
 
 export const Container = styled.section`
-  max-width: 480px;
+  max-width: 540px;
   background: #fff;
   margin: 30px auto;
   padding: 30px;

@@ -2,6 +2,20 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import * as colors from '../../config/colors';
 
+export const Container = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 30px;
+`;
+
 export const AlunoContainer = styled.div`
   margin-top: 20px;
 
@@ -23,26 +37,16 @@ export const Title = styled.h1`
 `;
 
 export const ProfilePicture = styled.div`
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 3px solid ${colors.primaryColor};
-  cursor: pointer;
-  border-radius: 50%;
-  overflow: hidden;
-
   img {
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
   }
 `;
 
 export const NewStudent = styled(Link)`
   display: flex;
-  padding: 15px 0 20px 0;
+  padding: 15px 0 2px 0;
   align-items: center;
   justify-content: center;
 `;

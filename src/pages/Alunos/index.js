@@ -9,9 +9,10 @@ import {
 } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
+import { Table } from 'react-bootstrap';
 import { Container } from '../../styles/GlobalStyle';
 import axios from '../../services/axios';
-import { AlunoContainer, ProfilePicture, Title, NewStudent } from './styled';
+import { ProfilePicture, Title, NewStudent } from './styled';
 import Loading from '../../components/Loading';
 import history from '../../services/history';
 
@@ -63,36 +64,44 @@ export default function Alunos() {
       <Loading isLoading={isLoading} />
       <Title>Alunos Matriculados</Title>
       <NewStudent to="/aluno/">Novo Aluno</NewStudent>
-      <AlunoContainer>
-        {alunos.map((aluno, index) => (
-          <div key={String(aluno.id)}>
-            <ProfilePicture>
-              {get(aluno, 'Fotos[0].url', false) ? (
-                <img crossOrigin="" src={aluno.Fotos[0].url} />
-              ) : (
-                <FaUserCircle size={36} />
-              )}
-            </ProfilePicture>
-            <span>{aluno.nome}</span>
-            <span>{aluno.email}</span>
-            <Link to={`/aluno/${aluno.id}/edit`}>
-              <FaEdit size={16} />
-            </Link>
-            <Link
-              onClick={handleDeleteQuestion}
-              to={`/aluno/${aluno.id}/delete`}
-            >
-              <FaWindowClose size={16} />
-            </Link>
-            <FaExclamation
-              size={16}
-              display="none"
-              cursor="pointer"
-              onClick={(e) => handleDeletecomfirm(e, aluno.id, index)}
-            />
-          </div>
-        ))}
-      </AlunoContainer>
+      <Table hover>
+        <tbody>
+          {alunos.map((aluno, index) => (
+            <tr key={String(aluno.id)}>
+              <td>
+                <ProfilePicture>
+                  {get(aluno, 'Fotos[0].url', false) ? (
+                    <img crossOrigin="" src={aluno.Fotos[0].url} />
+                  ) : (
+                    <FaUserCircle size={36} />
+                  )}
+                </ProfilePicture>
+              </td>
+              <td>{aluno.nome}</td>
+              <td>{aluno.email}</td>
+              <td>
+                <Link to={`/aluno/${aluno.id}/edit`}>
+                  <FaEdit size={16} />
+                </Link>
+              </td>
+              <td>
+                <Link
+                  onClick={handleDeleteQuestion}
+                  to={`/aluno/${aluno.id}/delete`}
+                >
+                  <FaWindowClose size={16} />
+                </Link>
+                <FaExclamation
+                  size={16}
+                  display="none"
+                  cursor="pointer"
+                  onClick={(e) => handleDeletecomfirm(e, aluno.id, index)}
+                />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
     </Container>
   );
 }
