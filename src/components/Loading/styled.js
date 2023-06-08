@@ -15,11 +15,13 @@ export const Container = styled.div`
   font-size: 30px;
 
   div {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     z-index: 1;
     background: rgba(0, 0, 0, 0.8);
+    background-attachment: fixed;
+    background-size: cover;
   }
 
   span {

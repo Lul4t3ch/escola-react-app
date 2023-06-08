@@ -40,6 +40,13 @@ export default function Register() {
       toast.error('Invalid email adress');
     }
 
+    if (id && password.length > 0 && password.length < 6) {
+      formErrors = true;
+      toast.error(
+        'Your password can either be empty or at least 6 characters long'
+      );
+    }
+
     if (!id && (password.length < 6 || password.length > 50)) {
       formErrors = true;
       toast.error('Password length must be at least 6 characters long');
